@@ -1,5 +1,5 @@
 
-// SOme basic resets
+// Some basic resets
 html, body { height: 100%; }
 body { 
     margin: 0;
@@ -11,4 +11,8 @@ body {
 .container {
     margin: 20px;
     display: flex;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
 }
