@@ -8,6 +8,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 
 import 'hammerjs';
 
+import { DishService } from "./services/dish.service";
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -32,7 +33,8 @@ import { DishdetailComponent } from './dishdetail/dishdetail.component';
     FlexLayoutModule
   ],
   providers: [
-    // Add all the services here 
+    // Add all the services here
+    DishService
   ],
   bootstrap: [AppComponent]
 })
