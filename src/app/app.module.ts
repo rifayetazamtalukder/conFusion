@@ -10,6 +10,7 @@ import 'hammerjs';
 
 import { DishService } from "./services/dish.service";
 import { PromotionService } from './services/promotion.service';
+import { LeaderService } from './services/leader.service';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -19,6 +20,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+
 
 
 
@@ -47,7 +49,8 @@ import { ContactComponent } from './contact/contact.component';
   providers: [
     // Add all the services here
     DishService,
-    PromotionService
+    PromotionService,
+    LeaderService
   ],
   bootstrap: [AppComponent]
 })
