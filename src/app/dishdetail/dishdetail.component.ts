@@ -1,6 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Params, ActivatedRoute } from "@angular/router";
+import { Location } from "@angular/common"; // Enables to track the location of page in the history of browser
 import { Dish } from '../shared/dish';
-
+import { DishService } from "../services/dish.service";
 
 
 
@@ -11,12 +13,25 @@ import { Dish } from '../shared/dish';
 })
 export class DishdetailComponent implements OnInit {
 
-  @Input() dish: Dish;
+  dish: Dish;
 
 
-  constructor() { }
+  constructor(private dishService: DishService,
+    private activatedRoute: ActivatedRoute,
+    private location: Location) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    let id = this.activatedRoute.snapshot.params['id'];
+
+    this.dish = this.dishService.getDish(id);
+  }
+
+  goBack(): void {
+    this.location.back();
+  }
+
+  goForward(): void {
+    this.location.forward();
   }
 
 }
