@@ -11,6 +11,8 @@ import { MatCardModule } from "@angular/material/card";
 
 import { MatButtonModule } from "@angular/material/button";
 
+import { MatDialogModule } from "@angular/material/dialog";
+
 
 
 const MATERIAL_MODUELS = [
@@ -22,7 +24,9 @@ const MATERIAL_MODUELS = [
 
   MatCardModule,
 
-  MatButtonModule
+  MatButtonModule,
+
+  MatDialogModule
 ]
 
 @NgModule({
