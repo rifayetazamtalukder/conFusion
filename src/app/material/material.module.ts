@@ -19,6 +19,12 @@ import { MatInputModule } from "@angular/material/input";
 
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
+import { MatSelectModule } from "@angular/material/select";
+
+import { MatSlideToggleModule } from "@angular/material/slide-toggle";
+
+
+
 
 const MATERIAL_MODUELS = [
   MatToolbarModule,
@@ -37,8 +43,15 @@ const MATERIAL_MODUELS = [
 
   MatInputModule,
 
-  MatCheckboxModule
-]
+  MatCheckboxModule,
+
+  MatSelectModule,
+
+  MatSlideToggleModule
+
+];
+
+
 
 @NgModule({
   declarations: [],
