@@ -108,9 +108,24 @@ export class ContactComponent implements OnInit {
   onSubmit() {
     this.feedback = this.feedbackForm.value;
 
-    console.log(this.feedback);
+    // console.log(this.feedback);
 
-    this.feedbackForm.reset({
+    // this.feedbackForm.reset({
+    //   firstname: '',
+    //   lastname: '',
+    //   telnum: 0,
+    //   email: '',
+    //   agree: false,
+    //   contacttype: 'None',
+    //   message: ''
+    // });
+    // 
+    // Uporer reset form er dorkar nai
+    // Nicher feedbackFormDirective.resetForm e jei parameter set
+    // kora hobe finnaly tai form er value thakbe
+    // 
+    // 
+    this.feedbackFormDirective.resetForm({
       firstname: '',
       lastname: '',
       telnum: 0,
@@ -119,8 +134,6 @@ export class ContactComponent implements OnInit {
       contacttype: 'None',
       message: ''
     });
-
-    this.feedbackFormDirective.resetForm();
   }
 
 

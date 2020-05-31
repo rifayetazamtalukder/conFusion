@@ -25,6 +25,9 @@ import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
+import { MatSliderModule } from "@angular/material/slider";
+
+
 
 const MATERIAL_MODUELS = [
   MatToolbarModule,
@@ -49,7 +52,9 @@ const MATERIAL_MODUELS = [
 
   MatSlideToggleModule,
 
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+
+  MatSliderModule
 
 ];
 
