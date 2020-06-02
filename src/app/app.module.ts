@@ -7,12 +7,15 @@ import { MaterialModule } from "./material/material.module";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { FormsModule } from "@angular/forms"; // Template-driven forms
 import { ReactiveFormsModule } from '@angular/forms'; // Reactive froms
+import { HttpClientModule } from "@angular/common/http";
 
 import 'hammerjs';
 
 import { DishService } from "./services/dish.service";
 import { PromotionService } from './services/promotion.service';
 import { LeaderService } from './services/leader.service';
+
+import { baseURL } from "./shared/baseurl";
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -51,12 +54,17 @@ import { LoginComponent } from './login/login.component';
     FlexLayoutModule,
     FormsModule, // Template-driven forms
     ReactiveFormsModule, // Reactive forms
+    HttpClientModule
   ],
   providers: [
     // Add all the services here
     DishService,
     PromotionService,
-    LeaderService
+    LeaderService,
+    {
+      provide: 'BaseURL',
+      useValue: baseURL
+    }
   ],
   entryComponents: [
     LoginComponent

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 
 import { Dish } from "../shared/dish";
 
@@ -14,15 +14,14 @@ export class MenuComponent implements OnInit {
 
   dishes: Dish[];
 
-  selectedDish: Dish;
-
 
   // ==================================================
   //                      Constructor
   // 
   // Automatically runs when the class is been created
   // ==================================================
-  constructor(private dishService: DishService) { }
+  constructor(private dishService: DishService,
+    @Inject('BaseURL') public BaseURL) { }
 
 
   // ==================================================
@@ -37,12 +36,6 @@ export class MenuComponent implements OnInit {
       .subscribe((dishes) => this.dishes = dishes);
 
   }
-
-
-  onSelect(dish: Dish) {
-    this.selectedDish = dish;
-  }
-
 
 
 }

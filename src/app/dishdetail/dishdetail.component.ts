@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Inject } from '@angular/core';
 import { ActivatedRoute, Params } from "@angular/router";
 import { Location } from "@angular/common"; // Enables to track the location of page in the history of browser
 import { Dish } from '../shared/dish';
@@ -56,7 +56,8 @@ export class DishdetailComponent implements OnInit {
   constructor(private dishService: DishService,
     private activatedRoute: ActivatedRoute,
     private location: Location,
-    private fb: FormBuilder) {
+    private fb: FormBuilder,
+    @Inject('BaseURL') public BaseURL) {
 
     this.createForm();
   }
