@@ -28,6 +28,7 @@ export class DishdetailComponent implements OnInit {
 
   commentForm: FormGroup;
   comment: Comment;
+  dishCopy: Dish;
 
   @ViewChild('cform') commentFormDirective;
 
@@ -72,6 +73,7 @@ export class DishdetailComponent implements OnInit {
       .pipe(switchMap((params: Params) => this.dishService.getDish(params['id'])))
       .subscribe(dish => {
         this.dish = dish;
+        this.dishCopy = dish;
         this.setPrevNext(dish.id);
       },
         errmess => this.errMess = <any>errmess);
@@ -144,20 +146,19 @@ export class DishdetailComponent implements OnInit {
     // comment object using dish.service.ts
 
     // console.log(this.dish.id)
-    this.dish.comments.push(this.comment);
+    this.dishCopy.comments.push(this.comment);
 
-    // this.commentForm.reset({
-    //   rating: 5,
-    //   comment: '',
-    //   author: '',
-    //   date: ''
-    // }); 
-    // 
-    // Uporer reset form er dorkar nai
-    // Nicher feedbackFormDirective.resetForm e jei parameter set
-    // kora hobe finnaly tai form er value thakbe
-    // 
-    // 
+    this.dishService.putDish(this.dishCopy)
+      .subscribe(dish => {
+        this.dish = dish;
+        this.dishCopy = dish;
+      },
+        errmess => {
+          this.dish = null;
+          this.dishCopy = null;
+          this.errMess = <any>errmess;
+        });
+
     this.commentFormDirective.resetForm({
       rating: 5,
       comment: '',
