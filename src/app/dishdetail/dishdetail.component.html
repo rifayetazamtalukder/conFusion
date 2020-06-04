@@ -6,7 +6,7 @@
     fxLayoutAlign.get-md="space-around center" fxLayoutGap="10px" fxLayoutGap.xl="100px" fxLayoutGap.lg="50px"
     fxLayoutGap.xs="5px">
 
-    <div fxFlex="40" *ngIf="dish">
+    <div fxFlex="40" *ngIf="dish" [@visibility]="visibility">
 
         <mat-card>
 
@@ -48,7 +48,7 @@
 
     </div>
 
-    <div fxFlex="40" *ngIf="dish">
+    <div fxFlex="40" *ngIf="dish" [@visibility]="visibility">
 
 
         <mat-card>
